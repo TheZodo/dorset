@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Loans from "@/components/Loans";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
         setSelectedPage={setSelectedPage}
       />
       <Hero setSelectedPage={setSelectedPage} />
+      <Loans setSelectedPage={setSelectedPage} />
     </main>
   );
 }

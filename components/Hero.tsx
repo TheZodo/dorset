@@ -49,11 +49,12 @@ const Hero = ({ setSelectedPage }: Props) => {
                 </h1>
               </div>
             </div>
-            <p className="mt-8 text-sm">
+            <p className="mt-8 text-sm ">
               {" "}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              accusamus ut aliquam dolorum recusandae dignissimos deserunt
-              adipisci minima deleniti dolore dolor{" "}
+              We firmly believe that we exist to make a positive difference in
+              people's lives. Our primary aim is to contribute to the
+              communities in which we operate and to make a meaningful impact on
+              the lives of the people who call these communities home.{" "}
             </p>
           </motion.div>
           {/* ACTIONS */}
