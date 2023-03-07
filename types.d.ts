@@ -5,3 +5,9 @@ enum SelectedPage {
   Testimonials = "testimonials",
   Contact = "contact",
 }
+
+interface Loans {
+  icon: JSX.Element;
+  title: string;
+  description: string;
+}

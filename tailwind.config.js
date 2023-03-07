@@ -28,7 +28,7 @@ module.exports = {
       },
       content: {
         dorsettext: "url('../assets/dorsetText.png')",
-        absrtactwaves: 'url("../assets/absrtactWaves.png")',
+        absrtactwaves: 'url("../assets/AbstractWaves.png")',
         sparkles: 'url("../assets/Sparkles.png")',
         circles: 'url("../assets/Circles.png")',
       },
