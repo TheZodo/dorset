@@ -1,5 +1,6 @@
 "use client";
 import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
-        setSelectedPage(SelectedPage.Home);
+        setSelectedPage("Home" as SelectedPage);
       }
       if (window.scrollY !== 0) {
         setIsTopOfPage(false);
@@ -21,13 +22,15 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
-    <main className="app">
+    <main className="app bg-red-500">
       <Navbar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
+      <Hero setSelectedPage={setSelectedPage} />
     </main>
   );
 }
