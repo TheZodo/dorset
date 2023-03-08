@@ -2,6 +2,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Loans from "@/components/Loans";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import About from "@/components/About";
 
@@ -35,6 +37,8 @@ export default function Home() {
       <Hero setSelectedPage={setSelectedPage} />
       <About setSelectedPage={setSelectedPage} />
       <Loans setSelectedPage={setSelectedPage} />
+      <Contact setSelectedPage={setSelectedPage} />
+      <Footer />
     </main>
   );
 }

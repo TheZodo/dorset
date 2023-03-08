@@ -24,7 +24,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   return (
     <nav>
       <div
-        className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6 `}
+        className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-4 `}
       >
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
@@ -32,8 +32,8 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             <Image src={Logo} height={100} width={100} alt="Dorset Logo" />
             {/* Right Side */}
             {isAboveMediumScreens ? (
-              <div className={`${flexBetween} w-full`}>
-                <div className={`${flexBetween} gap-8 text-sm `}>
+              <div className={`flex w-full items-center justify-end`}>
+                <div className={`${flexBetween} mr-60 gap-8 text-sm`}>
                   <NavLink
                     page="Home"
                     selectedPage={selectedPage}
