@@ -55,10 +55,6 @@ const Contact = ({ setSelectedPage }: Props) => {
             <span className="text-primary-500">Get In Touch</span> and Get Your
             Loan Today!
           </HText>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-            perspiciatis.
-          </p>
         </motion.div>
         {/* Form and Static */}
         <div className="mt-10 justify-between gap-8 ">
