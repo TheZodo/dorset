@@ -6,6 +6,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import About from "@/components/About";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
@@ -37,6 +38,7 @@ export default function Home() {
       <Hero setSelectedPage={setSelectedPage} />
       <About setSelectedPage={setSelectedPage} />
       <Loans setSelectedPage={setSelectedPage} />
+      <Testimonials setSelectedPage={setSelectedPage} />
       <Contact setSelectedPage={setSelectedPage} />
       <Footer />
     </main>

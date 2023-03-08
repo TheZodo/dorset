@@ -11,3 +11,8 @@ interface Loans {
   title: string;
   description: string;
 }
+
+interface Testimonials {
+  name: string;
+  quote: string;
+}
