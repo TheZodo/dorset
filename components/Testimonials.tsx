@@ -64,7 +64,7 @@ export default function Testimonials({ setSelectedPage }: Props) {
         </motion.div>
         <motion.div
           className="mt-5 items-center justify-between gap-8 md:flex "
-          initial="hidden"
+          initial="visible"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={container}
