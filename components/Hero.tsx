@@ -15,7 +15,7 @@ const Hero = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   return (
-    <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0 ">
+    <section id="home" className="gap-16 bg-white py-10 md:h-full md:pb-0 ">
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
         className="mx-auto w-5/6 items-center justify-center md:flex md:h-full"
@@ -40,12 +40,12 @@ const Hero = ({ setSelectedPage }: Props) => {
             <div className="relative">
               <div className="before:absolute before:-top-20 before:left-20 before:z-[-1] md:before:content-dorsettext">
                 <h1 className="text-5xl font-black">
-                  Transforming the Outlook of{" "}
+                  To create a tangible difference in the{" "}
                   <span className="text-primary-500">
                     {" "}
-                    Financial Transaction{" "}
+                    lives and communities{" "}
                   </span>{" "}
-                  in Zambia and Africa
+                  of the people we serve.
                 </h1>
               </div>
             </div>
@@ -70,7 +70,7 @@ const Hero = ({ setSelectedPage }: Props) => {
             }}
           >
             <ActionButton setSelectedPage={setSelectedPage}>
-              Get Started
+              Get a Loan
             </ActionButton>
             <AnchorLink
               className="text-sm font-bold text-primary-500 hover:text-secondary-500"

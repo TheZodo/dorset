@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Logo from "../assets/ddp.svg";
+import DorsetLogo from "../assets/Dorset-Capital-Logo.png";
 import { SocialIcon } from "react-social-icons";
 
 type Props = {};
@@ -9,8 +10,9 @@ const Footer = (props: Props) => {
   return (
     <footer className="bg-primary-100 py-16 ">
       <div className="justify-content mx-auto w-5/6 gap-16 md:flex">
-        <div className="mt-16 basis-1/2 md:mt-0">
+        <div className="mt-16 grid basis-1/2 grid-cols-2 md:mt-0">
           <Image src={Logo} height={200} width={200} alt="Dorset Logo" />
+          <Image src={DorsetLogo} height={200} width={200} alt="Dorset Logo" />
           <p className="my-5">
             Dorset Capital Limited is registered money lending company that
             offers financial solutions to employees, informal traders and small
