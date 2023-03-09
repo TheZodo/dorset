@@ -1,28 +1,26 @@
-"use client";
 import React from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import ActionButton from "./ActionButton";
-import HomePageGraphic from "@/assets/hero.png";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import AboutLady from "@/assets/about-image.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
-
-const Hero = ({ setSelectedPage }: Props) => {
+export default function About({ setSelectedPage }: Props) {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-
   return (
-    <section id="home" className="gap-16 bg-white py-10 md:h-full md:pb-0 ">
-      {/* IMAGE AND MAIN HEADER */}
+    <section id="about" className="gap-16 bg-white py-10 md:h-full md:pb-0 ">
       <motion.div
         className="mx-auto w-5/6 items-center justify-center md:flex md:h-full"
         onViewportEnter={() => {
-          setSelectedPage("Home" as SelectedPage);
+          setSelectedPage("About" as SelectedPage);
         }}
       >
+        {/* IMAGE */}
+        <div className="flex basis-3/5 justify-center md:z-10 md:mr-40 md:mt-16 md:justify-items-start">
+          <Image alt="home-page-graphic" src={AboutLady} />
+        </div>
         {/* MAIN HEADER */}
         <div className="z-10 mt-32 md:basis-3/5 ">
           {/* HEADINGS */}
@@ -40,21 +38,22 @@ const Hero = ({ setSelectedPage }: Props) => {
             <div className="relative">
               <div className="before:absolute before:-top-20 before:left-20 before:z-[-1] md:before:content-dorsettext">
                 <h1 className="text-5xl font-black">
-                  To create a tangible difference in the{" "}
-                  <span className="text-primary-500">
+                  <span className="text-secondary-500">
                     {" "}
-                    lives and communities{" "}
+                    Dorset Capital Limited{" "}
                   </span>{" "}
-                  of the people we serve.
+                  is registered money lending company that offers financial
+                  solutions to employees, informal traders and small businesses
                 </h1>
               </div>
             </div>
             <p className="mt-8 text-sm ">
               {" "}
-              We firmly believe that we exist to make a positive difference in
-              people's lives. Our primary aim is to contribute to the
-              communities in which we operate and to make a meaningful impact on
-              the lives of the people who call these communities home.{" "}
+              We strive to perform well beyond expectations, operating with
+              technical expertise and commitment to deliver tailored financial
+              products that ensure client satisfaction and encourage client
+              growth Our clients can benefit from a be spoke service that is
+              tailored to each customer’s needs{" "}
             </p>
           </motion.div>
           {/* ACTIONS */}
@@ -68,26 +67,9 @@ const Hero = ({ setSelectedPage }: Props) => {
               hidden: { opacity: 0, x: -50 },
               visible: { opacity: 1, x: 0 },
             }}
-          >
-            <ActionButton setSelectedPage={setSelectedPage}>
-              Get a Loan
-            </ActionButton>
-            <AnchorLink
-              className="text-sm font-bold text-primary-500 hover:text-secondary-500"
-              onClick={() => setSelectedPage(SelectedPage.About)}
-              href={`#about`}
-            >
-              <p>Learn More</p>
-            </AnchorLink>
-          </motion.div>
-        </div>
-        {/* IMAGE */}
-        <div className="flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end">
-          <Image alt="home-page-graphic" src={HomePageGraphic} />
+          ></motion.div>
         </div>
       </motion.div>
     </section>
   );
-};
-
-export default Hero;
+}

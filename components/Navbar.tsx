@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-import Logo from "../assets/ddp.svg";
+import Logo from "../assets/Dorset-Capital-Logo.png";
 import NavLink from "./NavLink";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Link from "next/link";
