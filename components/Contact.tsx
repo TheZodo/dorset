@@ -36,10 +36,10 @@ const Contact = ({ setSelectedPage }: Props) => {
   return (
     <section
       id="contact"
-      className="  relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left"
+      className="  relative mx-auto flex h-screen flex-col items-center justify-evenly bg-gray-20 px-10 text-center md:flex-row md:text-left"
     >
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Contact)}>
-        {/* Header */}
+        {/* Header*/}
         <motion.div
           className="md:w-3/5"
           initial="hidden"

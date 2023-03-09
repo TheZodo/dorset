@@ -43,7 +43,7 @@ type Props = {
 
 const Loans = ({ setSelectedPage }: Props) => {
   return (
-    <section id="loans" className="mx-auto min-h-full w-5/6 py-20 ">
+    <section id="loans" className="mx-auto min-h-full bg-gray-20 py-20 ">
       <motion.div
         onViewportEnter={() => {
           setSelectedPage("Loans" as SelectedPage);
