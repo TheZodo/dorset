@@ -63,10 +63,10 @@ const Loans = ({ setSelectedPage }: Props) => {
         >
           <HText>OUR LOANS AND PRODUCTS</HText>
           <p className="my-5 text-sm">
-            Welcome to our Loans and Products section! Here you'll find
+            Welcome to our Loans and Products section! Here you&apos;ll find
             information about the various loans and financial products we offer
-            to help meet your specific needs. Whether you're looking to buy a
-            home, start a business, or consolidate your debts, we have a range
+            to help meet your specific needs. Whether you&apos;re looking to buy
+            a home, start a business, or consolidate your debts, we have a range
             of flexible and affordable options available to suit your situation.
           </p>
         </motion.div>

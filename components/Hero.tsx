@@ -52,7 +52,7 @@ const Hero = ({ setSelectedPage }: Props) => {
             <p className="mt-8 text-sm ">
               {" "}
               We firmly believe that we exist to make a positive difference in
-              people's lives. Our primary aim is to contribute to the
+              people&apos;s lives. Our primary aim is to contribute to the
               communities in which we operate and to make a meaningful impact on
               the lives of the people who call these communities home.{" "}
             </p>
