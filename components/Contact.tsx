@@ -138,8 +138,7 @@ const Contact = ({ setSelectedPage }: Props) => {
               <div className="flex items-center justify-center space-x-5">
                 <MapPinIcon className="h-7 w-7 animate-pulse text-primary-500" />
                 <p className="text-2xl">
-                  3rd Floor, Premium House, Kamwala , Opposite independence
-                  Avenue
+                  3rd Floor, Premium House, Kamwala , Independence Avenue
                 </p>
               </div>
               <div className="flex items-center justify-center space-x-5">

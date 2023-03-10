@@ -14,34 +14,27 @@ const Footer = (props: Props) => {
           <Image src={DorsetLogo} height={200} width={200} alt="Dorset Logo" />
           <Image src={Logo} height={200} width={200} alt="Dorset Logo" />
           <p className="my-5">
-            Dorset Capital Limited is registered money lending company that
+            Dorset Capital Limited is a registered money lending company that
             offers financial solutions to employees, informal traders and small
             businesses
           </p>
         </div>
         <div className="mt-16 basis-1/4 md:mt-0">
-          <h4 className="font-bold">Our Socials</h4>
+          <h4 className="font-bold">Find us on fafcebook</h4>
           <SocialIcon
             url="https://www.facebook.com/profile.php?id=100076248401528"
             fgColor="gray"
             bgColor="transparent"
           />
-          <SocialIcon
-            url="https://www.instagram.com"
+          {/* <SocialIcon
+            url="https://www.instagram.com/"
             fgColor="gray"
             bgColor="transparent"
-          />
-          <SocialIcon
-            url="https://www.twitter.com"
-            fgColor="gray"
-            bgColor="transparent"
-          />
+          /> */}
         </div>
         <div className="mt-16 basis-1/4 md:mt-0">
           <h4 className="font-bold">Contact Us</h4>
-          <p>
-            3 rd Floor, Premium House, Kamwala , Opposite independence Avenue
-          </p>
+          <p>3 rd Floor, Premium House, Kamwala , Independence Avenue</p>
           <p>+260 976 799 357</p>
           <p>+260 973 480 167</p>
         </div>
