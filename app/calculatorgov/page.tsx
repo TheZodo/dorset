@@ -173,7 +173,7 @@ const Calculator = () => {
                     You're eligible for the loan click the button below to apply
                   </p>
                   <a
-                    href="https://pesa.lendbox.io/"
+                    href="https://sample.lendbox.io/"
                     className={`font-poppins mt-5 rounded-full bg-secondary-500 py-4 px-8 text-[16px] text-white`}
                   >
                     Apply here
