@@ -22,7 +22,7 @@ const loans: Array<Loans> = [
     title: "Government Payroll Loans",
     url: "/calculatorgov",
     description:
-      "These are salary based loans for civil servants. The loans can be used for groceries, school fees, business start-up, building assistance, funeral and wedding expenses etc..",
+      "These are salary based loans for civil servants. The loans can be used for groceries, school fees, business start-up, building assistance, funeral and wedding expenses etc.",
   },
   {
     icon: <BuildingStorefrontIcon className="h-6 w-6" />,
@@ -68,9 +68,10 @@ const Loans = ({ setSelectedPage }: Props) => {
           <p className="my-5 text-sm">
             Welcome to our Loans and Products section! Here you&apos;ll find
             information about the various loans and financial products we offer
-            to help meet your specific needs. Whether you&apos;re looking to buy
-            a home, start a business, or consolidate your debts, we have a range
-            of flexible and affordable options available to suit your situation.
+            to help meet your specific needs. Whether you&apos;re looking to
+            boost your business, start a business, or consolidate your debts, we
+            have a range of flexible and affordable options available to suit
+            your situation.
           </p>
         </motion.div>
         {/* LOANS */}
@@ -149,12 +150,12 @@ const Loans = ({ setSelectedPage }: Props) => {
                   </li>
                   <li className="list-disc">No early repayment charges</li>
                   <li className="list-disc">
-                    Flexibility you can choose the period over which you want to
-                    spread the cost of your order.
+                    Flexibility &#45; you can choose the period over which you
+                    want to spread the cost of your order.
                   </li>
                   <li className="list-disc">
-                    Fixed amounts monthly payments are fixed at the same amount
-                    over the term of your loan.
+                    Fixed amounts &#45; monthly payments are fixed at the same
+                    amount over the term of your loan.
                   </li>
                 </ul>
               </motion.div>
