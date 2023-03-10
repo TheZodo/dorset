@@ -25,7 +25,7 @@ const Calculator = () => {
     if (loanAmount && netSalary && basicSalary) {
       monthly =
         (loanAmount * (1 + (interestRate * loanPeriod) / 100)) / loanPeriod;
-      afford = netSalary - basicSalary * 0.4;
+      afford = netSalary - basicSalary * 0.2;
       max = (afford * loanPeriod) / (1 + (interestRate * loanPeriod) / 100);
 
       setCanAfford(afford);
