@@ -13,18 +13,21 @@ const loans: Array<Loans> = [
   {
     icon: <BanknotesIcon className="h-6 w-6" />,
     title: "Private Payroll Loans",
+    url: "/calculatorpriv",
     description:
       "These are private payroll loans that are offered to private employees through partnerships with their employers. The loans can be used for groceries, school fees, business start up, building assistance, funeral and wedding expenses etc.",
   },
   {
     icon: <BuildingOffice2Icon className="h-6 w-6" />,
     title: "Government Payroll Loans",
+    url: "/calculatorgov",
     description:
       "These are salary based loans for civil servants. The loans can be used for groceries, school fees, business start-up, building assistance, funeral and wedding expenses etc..",
   },
   {
     icon: <BuildingStorefrontIcon className="h-6 w-6" />,
     title: "Business Loans",
+    url: "https://sample.lendbox.io/",
     description:
       "These are loans for small to medium sized businesses mainly used for working capital and further investments. These loans have a repayment period of up to 6 months.",
   },
@@ -84,6 +87,7 @@ const Loans = ({ setSelectedPage }: Props) => {
               title={loan.title}
               description={loan.description}
               icon={loan.icon}
+              url={loan.url}
               setSelectedPage={setSelectedPage}
             />
           ))}

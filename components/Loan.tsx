@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const childVariant = {
@@ -11,9 +12,10 @@ type Props = {
   title: string;
   description: string;
   setSelectedPage: (value: SelectedPage) => void;
+  url: string;
 };
 
-const Loan = ({ icon, title, description, setSelectedPage }: Props) => {
+const Loan = ({ icon, title, description, url, setSelectedPage }: Props) => {
   return (
     <motion.div
       variants={childVariant}
@@ -27,13 +29,13 @@ const Loan = ({ icon, title, description, setSelectedPage }: Props) => {
 
       <h4 className="font-bold">{title}</h4>
       <p className="my-3">{description}</p>
-      {/* <AnchorLink
+      <Link
         className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-        onClick={() => setSelectedPage(SelectedPage.Contact)}
-        href={`#contact}`}
+        // onClick={() => setSelectedPage(SelectedPage.Contact)}
+        href={`${url}`}
       >
-        <p>Learn More</p>
-      </AnchorLink> */}
+        <p>Apply here</p>
+      </Link>
     </motion.div>
   );
 };

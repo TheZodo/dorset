@@ -101,7 +101,7 @@ const Calculator = () => {
         <div className="m-5 flex w-11/12  flex-col items-center py-2">
           <label
             htmlFor="loanPeriod"
-            className="font-poppins ss:text-[22px] ss:leading-[60px] text-dark mt-6 flex-1 text-[12px] font-semibold leading-[35px]"
+            className="font-poppins ss:text-[22px] ss:leading-[60px] text-dark mt-6 flex-1 text-base text-[12px] font-semibold leading-[35px]"
           >
             Loan Period: {loanPeriod} {loanPeriod == 1 ? "Month" : "Months"}{" "}
           </label>
@@ -114,7 +114,7 @@ const Calculator = () => {
             min={1}
             max={12}
           /> */}
-          <InputLabel id="demo-simple-select-label">Loan Period</InputLabel>
+          {/* <InputLabel id="demo-simple-select-label">Loan Period</InputLabel> */}
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
