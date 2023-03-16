@@ -20,17 +20,17 @@ const Footer = (props: Props) => {
           </p>
         </div>
         <div className="mt-16 basis-1/4 md:mt-0">
-          <h4 className="font-bold">Find us on fafcebook</h4>
+          <h4 className="font-bold">Follow Us On</h4>
           <SocialIcon
             url="https://www.facebook.com/profile.php?id=100076248401528"
             fgColor="gray"
             bgColor="transparent"
           />
-          {/* <SocialIcon
-            url="https://www.instagram.com/"
+          <SocialIcon
+            url="https://www.instagram.com/dorsetpay/?hl=en"
             fgColor="gray"
             bgColor="transparent"
-          /> */}
+          />
         </div>
         <div className="mt-16 basis-1/4 md:mt-0">
           <h4 className="font-bold">Contact Us</h4>

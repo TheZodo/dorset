@@ -16,15 +16,35 @@ const Calculator = () => {
   const [netSalary, setNetSalary] = useState<number>();
   const [basicSalary, setBasicSalary] = useState<number>();
   const [maxBorrow, setMaxBorrow] = useState<number>(0);
+  function pmt(
+    interest_rate: number,
+    number_payments: number,
+    present_value: number,
+    future_value: number | undefined,
+    type: number | undefined
+  ): number {
+    let pmt: number, pvif: number;
+    if (!future_value) {
+      future_value = 0;
+    }
+    if (!type) {
+      type = 0;
+    }
+    pvif = Math.pow(1 + interest_rate, number_payments);
+    pmt = (interest_rate / (pvif - 1)) * -(present_value * pvif + future_value);
+    if (type === 1) {
+      pmt /= 1 + interest_rate;
+    }
+    return pmt;
+  }
 
   let monthly: number;
-
   let afford: number;
   let max: number;
   const calculate = () => {
     if (loanAmount && netSalary && basicSalary) {
-      monthly =
-        (loanAmount * (1 + (interestRate * loanPeriod) / 100)) / loanPeriod;
+      monthly = pmt(interestRate, loanPeriod, loanAmount, 0, 0);
+      // (loanAmount * (1 + (interestRate * loanPeriod) / 100)) / loanPeriod;
       afford = netSalary - basicSalary * 0.2;
       max = (afford * loanPeriod) / (1 + (interestRate * loanPeriod) / 100);
 
