@@ -38,6 +38,28 @@ const Calculator = () => {
     return pmt;
   }
 
+  function presentValue(
+    rate: number,
+    nper: number,
+    pmt: number,
+    fv: number = 0,
+    type: number = 0
+  ): number {
+    let pv: number;
+    if (rate === 0) {
+      pv = -1 * (fv + pmt * nper);
+    } else {
+      let x = Math.pow(1 + rate, -nper);
+      let y = Math.pow(1 + rate, nper);
+      pv =
+        -1 *
+        ((x * (fv + pmt * ((1 + rate * type) * nper))) / rate +
+          (y * pmt * (1 + rate * type)) / rate -
+          y * fv);
+    }
+    return pv;
+  }
+
   let monthly: number;
   let afford: number;
   let max: number;
