@@ -68,7 +68,8 @@ const Calculator = () => {
       monthly = pmt(interestRate, loanPeriod, loanAmount, 0, 0);
       // (loanAmount * (1 + (interestRate * loanPeriod) / 100)) / loanPeriod;
       afford = netSalary - basicSalary * 0.2;
-      max = (afford * loanPeriod) / (1 + (interestRate * loanPeriod) / 100);
+      max = presentValue(interestRate, loanPeriod, afford, 0, 0);
+      (afford * loanPeriod) / (1 + (interestRate * loanPeriod) / 100);
 
       setCanAfford(afford);
       setMonthlyRepayment(monthly);
