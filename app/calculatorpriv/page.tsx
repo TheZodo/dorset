@@ -46,15 +46,11 @@ const Calculator = () => {
     if (rate === 0) {
       pv = -1 * (fv + pmt * nper);
     } else {
-      let x = Math.pow(1 + rate, -nper);
-      let y = Math.pow(1 + rate, nper);
       pv =
-        -1 *
-        ((x * (fv + pmt * ((1 + rate * type) * nper))) / rate +
-          (y * pmt * (1 + rate * type)) / rate -
-          y * fv);
+        -fv / Math.pow(1 + rate, nper) -
+        (pmt * (1 + rate * type) * (Math.pow(1 + rate, nper) - 1)) / rate;
     }
-    return pv;
+    return Math.abs(pv);
   }
 
   let monthly: number;
@@ -66,7 +62,7 @@ const Calculator = () => {
       // (loanAmount * (1 + (interestRate * loanPeriod) / 100)) / loanPeriod;
       afford = netSalary - basicSalary * 0.2;
       max = presentValue(interestRate, loanPeriod, afford, 0, 0);
-      (afford * loanPeriod) / (1 + (interestRate * loanPeriod) / 100);
+      // (afford * loanPeriod) / (1 + (interestRate * loanPeriod) / 100);
 
       setCanAfford(afford);
       setMonthlyRepayment(monthly);
