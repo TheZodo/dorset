@@ -1,10 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import Slider from "material-ui/Slider";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import FormControl from "@mui/material/FormControl";
 const Calculator = () => {
   const [interestRate, setInterestRate] = useState<number>(0.125);
   const [loanAmount, setLoanAmount] = useState<number>();
