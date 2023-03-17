@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 const Calculator = () => {
-  const [interestRate, setInterestRate] = useState<number>(0.125);
+  const [interestRate, setInterestRate] = useState<number>(0);
   const [loanAmount, setLoanAmount] = useState<number>();
   const [loanPeriod, setLoanPeriod] = useState<number>(1);
   const [monthlyRepayment, setMonthlyRepayment] = useState<number>(0);
@@ -35,6 +35,24 @@ const Calculator = () => {
     return Math.abs(pmt);
   }
 
+  // function presentValue(
+  //   rate: number,
+  //   nper: number,
+  //   pmt: number,
+  //   fv: number = 0,
+  //   type: number = 0
+  // ): number {
+  //   let pv: number;
+  //   if (rate === 0) {
+  //     pv = -1 * (fv + pmt * nper);
+  //   } else {
+  //     pv =
+  //       -fv / Math.pow(1 + rate, nper) -
+  //       (pmt * (1 + rate * type) * (Math.pow(1 + rate, nper) - 1)) / rate;
+  //   }
+  //   return Math.abs(pv);
+  // }
+
   function presentValue(
     rate: number,
     nper: number,
@@ -46,9 +64,13 @@ const Calculator = () => {
     if (rate === 0) {
       pv = -1 * (fv + pmt * nper);
     } else {
+      let x = Math.pow(1 + rate, -nper);
+      let y = Math.pow(1 + rate, nper);
       pv =
-        -fv / Math.pow(1 + rate, nper) -
-        (pmt * (1 + rate * type) * (Math.pow(1 + rate, nper) - 1)) / rate;
+        -1 *
+        ((x * (fv + pmt * ((1 + rate * type) * nper))) / rate +
+          (y * pmt * (1 + rate * type)) / rate -
+          y * fv);
     }
     return Math.abs(pv);
   }
