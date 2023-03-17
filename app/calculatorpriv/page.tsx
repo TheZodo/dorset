@@ -6,7 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 const Calculator = () => {
-  const [interestRate, setInterestRate] = useState<number>(12);
+  const [interestRate, setInterestRate] = useState<number>(0.125);
   const [loanAmount, setLoanAmount] = useState<number>();
   const [loanPeriod, setLoanPeriod] = useState<number>(1);
   const [monthlyRepayment, setMonthlyRepayment] = useState<number>(0);
@@ -35,7 +35,7 @@ const Calculator = () => {
     if (type === 1) {
       pmt /= 1 + interest_rate;
     }
-    return pmt;
+    return Math.abs(pmt);
   }
 
   function presentValue(
@@ -76,11 +76,6 @@ const Calculator = () => {
       setTotalRepayment(monthly * loanPeriod);
       setMaxBorrow(max);
     }
-    // if(canAfford > monthlyPayment) {
-    //     cannotAfford = false
-    // } else {
-    //     document.getElementById("result").innerHTML = `The maximum you can afford to borrow is ${canAfford}`
-    // }
     if (monthly > afford) {
       setEligible(false);
     } else {
