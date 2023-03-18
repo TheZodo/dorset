@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 const Calculator = () => {
-  const [interestRate, setInterestRate] = useState<number>(0);
+  const [interestRate, setInterestRate] = useState<number>(0.125);
   const [loanAmount, setLoanAmount] = useState<number>();
   const [loanPeriod, setLoanPeriod] = useState<number>(1);
   const [monthlyRepayment, setMonthlyRepayment] = useState<number>(0);
@@ -53,26 +53,45 @@ const Calculator = () => {
   //   return Math.abs(pv);
   // }
 
+  // function presentValue(
+  //   rate: number,
+  //   nper: number,
+  //   pmt: number,
+  //   fv: number = 0,
+  //   type: number = 0
+  // ): number {
+  //   let pv: number;
+  //   if (rate === 0) {
+  //     pv = -1 * (fv + pmt * nper);
+  //   } else {
+  //     let x = Math.pow(1 + rate, -nper);
+  //     let y = Math.pow(1 + rate, nper);
+  //     pv =
+  //       -1 *
+  //       ((x * (fv + pmt * ((1 + rate * type) * nper))) / rate + (y * pmt * (1 + rate * type)) / rate - y * fv);
+  //   }
+  //   return Math.abs(pv);
+  // }
+
   function presentValue(
     rate: number,
-    nper: number,
-    pmt: number,
-    fv: number = 0,
+    periods: number,
+    payment: number,
+    futureValue: number = 0,
     type: number = 0
   ): number {
-    let pv: number;
-    if (rate === 0) {
-      pv = -1 * (fv + pmt * nper);
-    } else {
-      let x = Math.pow(1 + rate, -nper);
-      let y = Math.pow(1 + rate, nper);
-      pv =
-        -1 *
-        ((x * (fv + pmt * ((1 + rate * type) * nper))) / rate +
-          (y * pmt * (1 + rate * type)) / rate -
-          y * fv);
-    }
-    return Math.abs(pv);
+    // Calculate the discount rate
+    const discountRate = rate;
+
+    // Calculate the present value
+    const presentValue =
+      -1 *
+      (futureValue +
+        payment *
+          (((1 + discountRate * type) * ((1 + discountRate) ** periods - 1)) /
+            (discountRate * (1 + discountRate) ** periods)));
+
+    return presentValue;
   }
 
   let monthly: number;
@@ -223,7 +242,8 @@ const Calculator = () => {
               {eligible ? (
                 <div className="flex flex-col items-center justify-center">
                   <p>
-                    You're eligible for the loan click the button below to apply
+                    You're <strong className="text-green-600"> Eligible</strong>{" "}
+                    for the loan click the button below to apply
                   </p>
                   <a
                     href="https://sample.lendbox.io/"
@@ -234,8 +254,9 @@ const Calculator = () => {
                 </div>
               ) : (
                 <div>
-                  You're <strong>NOT</strong> eligible for the loan, reduce your
-                  request and calculate to check your eligibility{" "}
+                  You're <strong className=" text-red-600">NOT</strong> eligible
+                  for the loan, reduce your request and calculate to check your
+                  eligibility{" "}
                 </div>
               )}{" "}
             </div>

@@ -36,6 +36,65 @@ const Calculator = () => {
     return Math.abs(pmt);
   }
 
+  // function presentValue(
+  //   rate: number,
+  //   nper: number,
+  //   pmt: number,
+  //   fv: number = 0,
+  //   type: number = 0
+  // ): number {
+  //   let pv: number;
+  //   if (rate === 0) {
+  //     pv = -1 * (fv + pmt * nper);
+  //   } else {
+  //     pv =
+  //       -fv / Math.pow(1 + rate, nper) -
+  //       (pmt * (1 + rate * type) * (Math.pow(1 + rate, nper) - 1)) / rate;
+  //   }
+  //   return Math.abs(pv);
+  // }
+
+  // function presentValue(
+  //   rate: number,
+  //   nper: number,
+  //   pmt: number,
+  //   fv: number = 0,
+  //   type: number = 0
+  // ): number {
+  //   let pv: number;
+  //   if (rate === 0) {
+  //     pv = -1 * (fv + pmt * nper);
+  //   } else {
+  //     let x = Math.pow(1 + rate, -nper);
+  //     let y = Math.pow(1 + rate, nper);
+  //     pv =
+  //       -1 *
+  //       ((x * (fv + pmt * ((1 + rate * type) * nper))) / rate + (y * pmt * (1 + rate * type)) / rate - y * fv);
+  //   }
+  //   return Math.abs(pv);
+  // }
+
+  function presentValue(
+    rate: number,
+    periods: number,
+    payment: number,
+    futureValue: number = 0,
+    type: number = 0
+  ): number {
+    // Calculate the discount rate
+    const discountRate = rate;
+
+    // Calculate the present value
+    const presentValue =
+      -1 *
+      (futureValue +
+        payment *
+          (((1 + discountRate * type) * ((1 + discountRate) ** periods - 1)) /
+            (discountRate * (1 + discountRate) ** periods)));
+
+    return presentValue;
+  }
+
   let monthly: number;
   let afford: number;
   let max: number;
@@ -44,18 +103,14 @@ const Calculator = () => {
       monthly = pmt(interestRate, loanPeriod, loanAmount, 0, 0);
       // (loanAmount * (1 + (interestRate * loanPeriod) / 100)) / loanPeriod;
       afford = netSalary - basicSalary * 0.4;
-      max = (afford * loanPeriod) / (1 + (interestRate * loanPeriod) / 100);
+      max = presentValue(interestRate, loanPeriod, afford, 0, 0);
+      // (afford * loanPeriod) / (1 + (interestRate * loanPeriod) / 100);
 
       setCanAfford(afford);
       setMonthlyRepayment(monthly);
       setTotalRepayment(monthly * loanPeriod);
       setMaxBorrow(max);
     }
-    // if(canAfford > monthlyPayment) {
-    //     cannotAfford = false
-    // } else {
-    //     document.getElementById("result").innerHTML = `The maximum you can afford to borrow is ${canAfford}`
-    // }
     if (monthly > afford) {
       setEligible(false);
     } else {
