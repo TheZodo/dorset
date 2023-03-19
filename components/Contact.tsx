@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { PhoneIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import HText from "./HText";
+import emailjs from "@emailjs/browser";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -13,22 +14,46 @@ type Inputs = {
   name: string;
   email: string;
   message: string;
+  subject: string;
 };
 
 const Contact = ({ setSelectedPage }: Props) => {
   const {
     register,
-    trigger,
+    handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
-  // const onSubmit: SubmitHandler<Inputs> = (data) =>
-  // 	(window.location.href = `mailto:kaputokalan@gmail?subject=${data.subject}&body=Hi My name is ${data.name}, ${data.message}`)
 
-  const onSubmit = async (e: any) => {
-    const isValid = await trigger();
-    if (!isValid) {
-      e.preventDefault();
-    }
+  const onSubmit: SubmitHandler<Inputs> = (data) =>
+    (window.location.href = `mailto:kaputokalan@gmail?subject=${data.subject}&body=Hi My name is ${data.name}, ${data.message}`);
+
+  // const onSubmit = async (e: any) => {
+  //   const isValid = await trigger();
+  //   if (!isValid) {
+  //     e.preventDefault();
+  //   }
+  // };
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_kb5ngah",
+        "template_npgedq8",
+        e.currentTarget,
+        "JxnLB6MQqcZFYl_na"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    e.currentTarget.reset();
   };
 
   const contactInput = `mb-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-gray-100 text-gray-900`;
@@ -36,7 +61,7 @@ const Contact = ({ setSelectedPage }: Props) => {
   return (
     <section
       id="contact"
-      className="  relative mx-auto flex h-screen flex-col items-center justify-evenly bg-gray-20 px-10 text-center md:flex-row md:text-left"
+      className="  relative mx-auto  flex h-full flex-col items-center justify-evenly bg-gray-20 p-10 text-center md:flex-row md:text-left"
     >
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Contact)}>
         {/* Header*/}
@@ -70,54 +95,38 @@ const Contact = ({ setSelectedPage }: Props) => {
             }}
           >
             <form
-              onSubmit={onSubmit}
-              method="POST"
-              action="https://formsubmit.co/kaputokalan11@gmail.com"
+              onSubmit={sendEmail}
               //   className="mx-auto flex w-fit flex-col space-y-2"
             >
               <input
-                {...(register("name"), { required: true, maxLength: 100 })}
+                type="text"
+                name="user_name"
                 placeholder="Name"
+                className={`${contactInput}`}
+              />
+
+              <input
+                name="user_subject"
+                placeholder="Subject"
                 className={`${contactInput}`}
                 type="text"
               />
-              {errors.name && (
-                <p className="mt-1 text-primary-500 ">
-                  {errors.name.type === "required" && "Name is required"}
-                  {errors.name.type === "maxLength" &&
-                    "Max length is 100 characters"}
-                </p>
-              )}
+
               <input
-                {...register("email", {
-                  required: true,
-                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                })}
+                name="user_email"
                 placeholder="Email"
                 className={`${contactInput}`}
                 type="email"
               />
-              {errors.email && (
-                <p className="mt-1 text-primary-500">
-                  {errors.email.type === "required" && "Email is required."}
-                  {errors.email.type === "pattern" && "Invalid email address."}
-                </p>
-              )}
 
               <textarea
-                {...(register("message"), { required: true, maxLength: 2000 })}
+                name="message"
                 placeholder="Message"
                 rows={4}
                 cols={50}
                 className={`${contactInput}`}
               />
-              {errors.message && (
-                <p className="mt-1 text-primary-500 ">
-                  {errors.message.type === "required" && "Name is required"}
-                  {errors.message.type === "maxLength" &&
-                    "Max length is 2000 characters"}
-                </p>
-              )}
+
               <button
                 type="submit"
                 className="mt-5 rounded-lg bg-secondary-400 px-20 py-3 transition duration-500 hover:text-white "
