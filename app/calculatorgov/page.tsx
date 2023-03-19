@@ -130,7 +130,7 @@ const Calculator = () => {
               htmlFor="loanAmount"
               className="text-dark font-poppins text-base"
             >
-              Enter The Amount You'd like to borrow
+              Enter The Amount You&apos;d like to borrow
             </label>
             <input
               type="number"
@@ -243,7 +243,8 @@ const Calculator = () => {
               {eligible ? (
                 <div className="flex flex-col items-center justify-center">
                   <p>
-                    You're eligible for the loan click the button below to apply
+                    You&apos;re eligible for the loan click the button below to
+                    apply
                   </p>
                   <a
                     href="https://sample.lendbox.io/"
@@ -254,8 +255,8 @@ const Calculator = () => {
                 </div>
               ) : (
                 <div>
-                  You're <strong>NOT</strong> eligible for the loan, reduce your
-                  request and calculate to check your eligibility{" "}
+                  You&apos;re <strong>NOT</strong> eligible for the loan, reduce
+                  your request and calculate to check your eligibility{" "}
                 </div>
               )}{" "}
             </div>
