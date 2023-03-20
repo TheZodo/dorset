@@ -53,7 +53,7 @@ export default function About({ setSelectedPage }: Props) {
               technical expertise and commitment to deliver tailored financial
               products that ensure client satisfaction and encourage client
               growth Our clients can benefit from a be spoke service that is
-              tailored to each customer’s needs{" "}
+              tailored to each customer&apos;s needs{" "}
             </p>
           </motion.div>
           {/* ACTIONS */}
