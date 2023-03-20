@@ -247,7 +247,7 @@ const Calculator = () => {
                     apply
                   </p>
                   <a
-                    href="https://sample.lendbox.io/"
+                    href="https://dorset.lendbox.io/"
                     className={`font-poppins mt-5 rounded-full bg-secondary-500 py-4 px-8 text-[16px] text-white`}
                   >
                     Apply here
