@@ -27,7 +27,7 @@ const loans: Array<Loans> = [
   {
     icon: <BuildingStorefrontIcon className="h-6 w-6" />,
     title: "Business Loans",
-    url: "https://sample.lendbox.io/",
+    url: "https://dorset.lendbox.io/",
     description:
       "These are loans for small to medium sized businesses mainly used for working capital and further investments. These loans have a repayment period of up to 6 months.",
   },
