@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dorset Capital Finance",
-  description: "Dorset Capital Finance Website",
+  title: "Dorset Capital Limited",
+  description: "Dorset Capital Limited Website",
 };
 
 export default function RootLayout({

@@ -42,7 +42,7 @@ export default function About({ setSelectedPage }: Props) {
                     {" "}
                     Dorset Capital Limited{" "}
                   </span>{" "}
-                  is registered money lending company that offers financial
+                  is a registered money lending company that offers financial
                   solutions to employees, informal traders and small businesses
                 </h1>
               </div>
