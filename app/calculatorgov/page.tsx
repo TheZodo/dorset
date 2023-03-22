@@ -130,7 +130,7 @@ const Calculator = () => {
               htmlFor="loanAmount"
               className="text-dark font-poppins text-base"
             >
-              Enter The Amount You'd like to borrow
+              Enter The Amount You&apos;d like to borrow
             </label>
             <input
               type="number"
@@ -207,6 +207,19 @@ const Calculator = () => {
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={11}>Eleven</MenuItem>
             <MenuItem value={12}>One Year</MenuItem>
+            <MenuItem value={12}>Twelve</MenuItem>
+            <MenuItem value={13}>Thirteen</MenuItem>
+            <MenuItem value={14}>Fourteen</MenuItem>
+            <MenuItem value={15}>Fifteen</MenuItem>
+            <MenuItem value={16}>Sixteen</MenuItem>
+            <MenuItem value={17}>Seventeen</MenuItem>
+            <MenuItem value={18}>Eighteen</MenuItem>
+            <MenuItem value={19}>Nineteen</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={21}>Twenty One</MenuItem>
+            <MenuItem value={22}>Twenty Two</MenuItem>
+            <MenuItem value={23}>Twenty Three</MenuItem>
+            <MenuItem value={24}>Twenty Four</MenuItem>
           </Select>
         </div>
       </form>
@@ -243,10 +256,11 @@ const Calculator = () => {
               {eligible ? (
                 <div className="flex flex-col items-center justify-center">
                   <p>
-                    You're eligible for the loan click the button below to apply
+                    You&apos;re eligible for the loan click the button below to
+                    apply
                   </p>
                   <a
-                    href="https://sample.lendbox.io/"
+                    href="https://dorset.lendbox.io/"
                     className={`font-poppins mt-5 rounded-full bg-secondary-500 py-4 px-8 text-[16px] text-white`}
                   >
                     Apply here
@@ -254,8 +268,8 @@ const Calculator = () => {
                 </div>
               ) : (
                 <div>
-                  You're <strong>NOT</strong> eligible for the loan, reduce your
-                  request and calculate to check your eligibility{" "}
+                  You&apos;re <strong>NOT</strong> eligible for the loan, reduce
+                  your request and calculate to check your eligibility{" "}
                 </div>
               )}{" "}
             </div>
