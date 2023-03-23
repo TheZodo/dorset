@@ -39,7 +39,7 @@ const Hero = ({ setSelectedPage }: Props) => {
           >
             <div className="relative">
               <div className="before:absolute before:-top-20 before:left-20 before:z-[-1] md:before:content-dorsettext">
-                <h1 className="text-5xl font-black">
+                <h1 className="text-3xl font-black md:text-5xl">
                   To create a tangible difference in the{" "}
                   <span className="text-primary-500">
                     {" "}
