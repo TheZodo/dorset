@@ -12,7 +12,7 @@ type Props = {
 
 type Inputs = {
   name: string;
-  email: string;
+  number: number;
   message: string;
   subject: string;
 };
@@ -104,7 +104,7 @@ const Contact = ({ setSelectedPage }: Props) => {
               <input
                 type="text"
                 name="user_name"
-                placeholder="Name"
+                placeholder="Your Name"
                 className={`${contactInput}`}
               />
 
@@ -116,10 +116,10 @@ const Contact = ({ setSelectedPage }: Props) => {
               />
 
               <input
-                name="user_email"
-                placeholder="Email"
+                name="user_number"
+                placeholder="Your Phone Number"
                 className={`${contactInput}`}
-                type="email"
+                type="number"
               />
 
               <textarea
