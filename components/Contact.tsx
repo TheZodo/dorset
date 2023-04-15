@@ -12,7 +12,7 @@ type Props = {
 
 type Inputs = {
   name: string;
-  email: string;
+  number: number;
   message: string;
   subject: string;
 };
@@ -61,9 +61,12 @@ const Contact = ({ setSelectedPage }: Props) => {
   return (
     <section
       id="contact"
-      className="  relative mx-auto  flex h-full flex-col items-center justify-evenly bg-gray-20 p-10 text-center md:flex-row md:text-left"
+      className=" relative mx-auto flex  flex-col items-center justify-evenly bg-gray-20 p-10  text-center md:flex-row md:text-left"
     >
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Contact)}>
+      <motion.div
+        className="h-full"
+        onViewportEnter={() => setSelectedPage(SelectedPage.Contact)}
+      >
         {/* Header*/}
         <motion.div
           className="md:w-3/5"
@@ -101,7 +104,7 @@ const Contact = ({ setSelectedPage }: Props) => {
               <input
                 type="text"
                 name="user_name"
-                placeholder="Name"
+                placeholder="Your Name"
                 className={`${contactInput}`}
               />
 
@@ -113,10 +116,10 @@ const Contact = ({ setSelectedPage }: Props) => {
               />
 
               <input
-                name="user_email"
-                placeholder="Email"
+                name="user_number"
+                placeholder="Your Phone Number"
                 className={`${contactInput}`}
-                type="email"
+                type="number"
               />
 
               <textarea
@@ -135,7 +138,7 @@ const Contact = ({ setSelectedPage }: Props) => {
               </button>
             </form>
           </motion.div>
-          <div className="mt-20 flex flex-col space-y-10">
+          <div className=" flex-col py-10">
             <div className=" flex items-center justify-center text-center ">
               <HText>Or Reach Us Through The Following</HText>
             </div>
