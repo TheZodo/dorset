@@ -142,7 +142,7 @@ const Contact = ({ setSelectedPage }: Props) => {
             <div className="space-y-10">
               <div className="flex items-center justify-center space-x-5">
                 <PhoneIcon className="h-7 w-7 animate-pulse text-primary-500" />
-                <p className="text-2xl">+260 976 799 357 / +260 973 480 167 </p>
+                <p className="text-2xl">+260776205558 </p>
               </div>
               <div className="flex items-center justify-center space-x-5">
                 <MapPinIcon className="h-7 w-7 animate-pulse text-primary-500" />
