@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 const Calculator = () => {
-  const [interestRate, setInterestRate] = useState<number>(0.075);
+  const [interestRate, setInterestRate] = useState<number>(0.04);
   const [loanAmount, setLoanAmount] = useState<number>();
   const [loanPeriod, setLoanPeriod] = useState<number>(1);
   const [monthlyRepayment, setMonthlyRepayment] = useState<number>(0);
@@ -208,7 +208,7 @@ const Calculator = () => {
             <MenuItem value={11}>Eleven</MenuItem>
             <MenuItem value={12}>One Year</MenuItem>
             <MenuItem value={12}>Twelve</MenuItem>
-            <MenuItem value={13}>Thirteen</MenuItem>
+            {/* <MenuItem value={13}>Thirteen</MenuItem>
             <MenuItem value={14}>Fourteen</MenuItem>
             <MenuItem value={15}>Fifteen</MenuItem>
             <MenuItem value={16}>Sixteen</MenuItem>
@@ -219,7 +219,7 @@ const Calculator = () => {
             <MenuItem value={21}>Twenty One</MenuItem>
             <MenuItem value={22}>Twenty Two</MenuItem>
             <MenuItem value={23}>Twenty Three</MenuItem>
-            <MenuItem value={24}>Twenty Four</MenuItem>
+            <MenuItem value={24}>Twenty Four</MenuItem> */}
           </Select>
         </div>
       </form>
