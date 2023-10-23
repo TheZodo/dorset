@@ -69,9 +69,16 @@ const Hero = ({ setSelectedPage }: Props) => {
               visible: { opacity: 1, x: 0 },
             }}
           >
-            <ActionButton setSelectedPage={setSelectedPage}>
+            {/* <ActionButton setSelectedPage={setSelectedPage}> */}
+
+            <a
+              href="https://dorset-app.vercel.app/"
+              className="rounded-lg bg-primary-500 px-5 py-3 font-bold text-secondary-500 hover:bg-secondary-500 hover:text-primary-500 "
+            >
               Get a Loan
-            </ActionButton>
+            </a>
+
+            {/* </ActionButton> */}
             <AnchorLink
               className="text-sm font-bold text-primary-500 hover:text-secondary-500"
               onClick={() => setSelectedPage(SelectedPage.About)}
