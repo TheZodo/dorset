@@ -34,9 +34,7 @@ const Footer = (props: Props) => {
         </div>
         <div className="mt-16 basis-1/4 md:mt-0">
           <h4 className="font-bold">Contact Us</h4>
-          <p>
-            7th Floor, Office 701 Premium House, Kamwala , Independence Avenue
-          </p>
+          <p>7th Floor, Premium House, Kamwala , Independence Avenue</p>
           <p>+260 976 799 357</p>
           <p>+260 973 480 167</p>
         </div>
