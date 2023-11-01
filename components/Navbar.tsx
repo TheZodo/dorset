@@ -62,7 +62,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                 </div>
                 <div>
                   <Link
-                    href="https://lendbox.io/login"
+                    href="https://admin.dorsetcap.com/"
                     className="bg-primary-500 py-2 px-6 font-bold text-white hover:bg-primary-300 "
                   >
                     Admin

@@ -72,7 +72,7 @@ const Hero = ({ setSelectedPage }: Props) => {
             {/* <ActionButton setSelectedPage={setSelectedPage}> */}
 
             <a
-              href="https://dorset-app.vercel.app/"
+              href="https://app.dorsetcap.com/"
               className="rounded-lg bg-primary-500 px-5 py-3 font-bold text-secondary-500 hover:bg-secondary-500 hover:text-primary-500 "
             >
               Get a Loan
