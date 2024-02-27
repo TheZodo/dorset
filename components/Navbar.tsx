@@ -59,6 +59,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
+                  <Link href={"/vacancies"}>
+                    <p className="hover:text-primary-300 ">Vacancies</p>
+                  </Link>
                 </div>
                 <div>
                   <Link
@@ -117,6 +120,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
+            <Link href={"/vacancies"}>
+              <p className="hover:text-primary-300 ">Vacancies</p>
+            </Link>
           </div>
         </div>
       )}
