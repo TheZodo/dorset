@@ -124,7 +124,9 @@ const Vacancies = () =>
                       visible: { opacity: 1, x: 0 },
                     }}
                   >
-                    <HText>JOIN THE TEAM AT DORSET AS A LOANS OFFICER</HText>
+                    <HText>
+                      JOIN THE TEAM AT DORSET AS A SENIOR SOFTWARE ENGINEER
+                    </HText>
                   </motion.div>
                 </div>
               </div>
@@ -203,10 +205,6 @@ const Vacancies = () =>
                   </ul>
                   <p className="mt-4 text-xl font-bold">Qualifications:</p>
                   <ul>
-                    <li className="list-disc">
-                      Evaluate loan applications and determine eligibility based
-                      on financial criteria.
-                    </li>
                     <li className="list-disc">
                       Bachelor&apos;s or Master&apos;s degree in Computer
                       Science, Software Engineering, or a related field.
